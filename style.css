@@ -1,0 +1,135 @@
+body { 
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	line-height: 1.5; 
+	background-color: #d9c4b1;
+	color: #31394d;
+	margin: 0;
+}
+
+header { 
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	text-align: center; 
+	background-color: #002f4a;
+	padding: 0 0; 
+	transition: padding 180ms ease;
+}
+
+.webtitle {
+	padding: 1.25rem 1.25rem;
+}
+
+header h1 {
+	color: #ede3da;
+	font-size: 2rem;
+	line-height: 1.25;
+	transition: font-size 180ms ease, margin 180ms ease;
+	padding: 0 0;
+	margin: 0 0 0.5rem; 
+}
+
+header h2 {
+	color: #d9c4b1;
+	max-height: 3em;
+	overflow: hidden;
+	transition: opacity 160ms ease, max-height 200ms ease, margin 200ms ease;
+	padding: 0 0;
+	margin: 0 0;
+}
+
+header.compact {
+	padding: 0 0;
+}
+
+header.compact h1 {
+	font-size: 1.35rem;
+	margin-bottom: 0;
+}
+
+header.compact h2 {
+	opacity: 0;
+	max-height: 0;
+	margin: 0;
+}
+
+nav {
+	background-color: #ede3da;
+	padding: 0.5rem 0.5rem;
+}
+
+nav a { 
+	padding: 0.5rem 0.75rem;
+	color: #002f4a;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: #b85741;
+	background-color: #ffffff;
+}
+
+main {
+	margin: 0rem auto; 
+	padding: 0rem 1.25rem;
+}
+
+.card { 
+	border: 1px solid #ffffff; 
+	border-radius: 0.8rem; 
+	padding: 1.5rem; 
+	margin: 1.25rem auto; 
+	max-width: 50rem; 
+	background-color: #ffffff;
+}
+
+h2 {
+	color: #b85741;
+	padding: 0;
+	margin-top: 0rem;
+	margin-left: 0rem;
+}
+
+.week {
+  background-color: #ede3da;
+  color: #002f4a;
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1rem;
+}
+
+.week.active, .week:hover {
+	background-color: #002f4a;
+	color: #ede3da; 
+}
+
+.week:after {
+	content: '\1F783';
+}
+
+.week.active:after {
+	content: '\1F781';
+}
+
+.progress {
+  padding: 0 1rem;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.no-transition .progress {
+  transition: none !important;
+}
+
+footer { 
+	padding-top: 2.5rem; 
+	font-size: 0.9em; 
+	color: #666; 
+	text-align: center; 
+}
