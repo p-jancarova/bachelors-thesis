@@ -75,7 +75,7 @@ main {
 }
 
 .card { 
-	scroll-margin-top: 2rem;
+	scroll-margin-top: 7.5rem;
 	border: 1px solid #ffffff; 
 	border-radius: 0.8rem; 
 	padding: 1.5rem; 
@@ -134,4 +134,5 @@ footer {
 	color: #666; 
 	text-align: center; 
 }
+
 
