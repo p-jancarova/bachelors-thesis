@@ -15,12 +15,15 @@
 			Neural and Parametric 3D Animal Model</h1>
 		<h2>A Bachelor's Thesis</h2>
 		</div>
-		<nav>
-			<a href="#info"><b>Information</b></a>
-			<a href="#journal"><b>Journal</b></a>
-			<a href="#contact"><b>Contact</b></a>
-		</nav>
 	</header>
+	
+	<nav>
+		<a href="#info"><b>Information</b></a>
+		<a href="#presentations"><b>Presentations</b></a>
+		<a href="#journal"><b>Journal</b></a>
+		<a href="#refs"><b>References</b></a>
+		<a href="#contact"><b>Contact</b></a>
+	</nav>
 	
 	<main>
 		<section class="card">
@@ -31,7 +34,32 @@
 				<li><b>Student:</b> Paulína Jančárová</li>
 				<li><b>Supervisor:</b> Mgr. Martin Halaj</li>
 				<li><b>Consultant:</b> doc. RNDr. Martin Madaras, PhD.</li>
+				<li><b>Description:</b> This thesis investigates  
+					hybrid approaches to the representation and rendering of 3D models 
+					by combining traditional parametric polygonal meshes with 
+					neural representations such as Neural Radiance Fields (NeRFs) 
+					or 3D Gaussian Splatting (3DGS). The goal is to design a 
+					hybrid representation of a 3D animal model, where the body 
+					is modeled using a parametric mesh and the fur is represented 
+					using one of the aforementioned neural representations. 
+				</li>
 			</ul>
+		</section>
+		
+		<section id="presentations" class="card">
+			<h2>Presentations</h2>
+				<h3>Introductory Presentation (downloads: 
+				<a href="Presentations/01 Úvod - Hybridná reprezentácia 
+				na neurálno parametrický 3D model zvieraťa.pdf" download>pdf</a>, 
+				<a href="Presentations/01 Úvod - Hybridná reprezentácia 
+				na neurálno parametrický 3D model zvieraťa.pptx" download>pptx</a>)
+				</h3>
+				<div class=iframe-container>
+				<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTNgIhbJfnq3E1OCHNGK2grOx4dQ0aFvUlh-yopOcIqqjb6CNIZ6a70DCn7yFQSh1Z4K2NHbdTojI6C/pubembed?start=false&loop=true&delayms=5000" 
+				frameborder="0" width="467" height="299" allowfullscreen="true" 
+				mozallowfullscreen="true" webkitallowfullscreen="true">
+				</iframe>
+				</div>
 		</section>
 	
 		<section id="journal" class="card">
@@ -41,7 +69,10 @@
 				(16. 02. 2026 - 22. 02. 2026)</b> </button>
 			<div class="progress">
 			<ul>
-				<li>-</li>
+				<li>Tried to set up SMALify (so far unsuccessfully)</li>
+				<li>Set up NeRF-Studio and tried training NeRFs and 3DGS 
+					on my own footage (a short video of a teddy bear)
+				</li>
 			</ul>
 			</div>
 			
@@ -55,8 +86,55 @@
 					<li>Discussion of solutions and next steps</li>
 				</ul>	
 				<li>Bachelor's thesis website creation</li>
+				<li>Bachelor seminar presentation preparation</li>
 			</ul>
 			</div>
+			
+			<button type="button" class="week"><b>Week 3 
+				(02. 03. 2026 - 08. 03. 2026)</b> </button>
+			<div class="progress">
+			<ul>
+				<li>Tried to set up NeRF-Texture (so far unsuccessfully)</li>
+				<li>Website update</li>
+				<ul>
+					<li>Added a short description, references 
+						and the introductory presentation</li>
+				</ul>	
+			</ul>
+			</div>
+		</section>
+		
+		<section id="refs" class="card">
+			<h2>References</h2>
+			<ul>
+				<li>Zuffi et al. 2017, Modeling the 3D Shape and Pose of Animals, 
+					<a href="https://smal.is.tue.mpg.de/" target="_blank" rel="noopener">
+					https://smal.is.tue.mpg.de/</a>
+				</li>
+				<li>Waczyńska et al. 2024, GaMeS: Mesh-Based Adapting and Modification 
+					of Gaussian Splatting, 
+					<a href="https://waczjoan.github.io/gaussian-mesh-splatting/" 
+					target="_blank" rel="noopener">
+					https://waczjoan.github.io/gaussian-mesh-splatting/</a>
+				</li>
+				<li>Shao et al. 2024, SplattingAvatar: 
+					Realistic Real-Time Human Avatars with Mesh-Embedded 
+					Gaussian Splatting, 
+					<a href="https://initialneil.github.io/SplattingAvatar" 
+					target="_blank" rel="noopener">
+					https://initialneil.github.io/SplattingAvatar</a>
+				</li>
+				<li>Gao et al. 2024, Mani-GS: Gaussian Splatting Manipulation 
+					with Triangular Mesh, 
+					<a href="https://gaoxiangjun.github.io/mani_gs/" target="_blank" 
+					rel="noopener">https://gaoxiangjun.github.io/mani_gs/</a>
+				</li>
+				<li>Huang et al. 2024, NeRF-Texture: Synthesizing 
+					Neural Radiance Field Textures, 
+					<a href="https://yihua7.github.io/NeRF-Texture-web/" target="_blank" 
+					rel="noopener">https://yihua7.github.io/NeRF-Texture-web/</a>
+				</li>
+			</ul>
 		</section>
 	
 		<section id="contact" class="card">
@@ -73,5 +151,4 @@
 	
 	<script src="script.js"></script> 
 </body>
-
 </html>

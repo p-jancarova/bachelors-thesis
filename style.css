@@ -7,9 +7,7 @@ body {
 }
 
 header { 
-	position: sticky;
 	top: 0;
-	z-index: 1000;
 	text-align: center; 
 	background-color: #002f4a;
 	padding: 0 0; 
@@ -54,12 +52,16 @@ header.compact h2 {
 }
 
 nav {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
 	background-color: #ede3da;
 	padding: 0.5rem 0.5rem;
+	text-align: center;
 }
 
 nav a { 
-	padding: 0.5rem 0.75rem;
+	padding: 0.5rem 0.5rem;
 	color: #002f4a;
 	text-decoration: none;
 }
@@ -75,7 +77,7 @@ main {
 }
 
 .card { 
-	scroll-margin-top: 7.5rem;
+	scroll-margin-top: 3rem;
 	border: 1px solid #ffffff; 
 	border-radius: 0.8rem; 
 	padding: 1.5rem; 
@@ -89,6 +91,22 @@ h2 {
 	padding: 0;
 	margin-top: 0rem;
 	margin-left: 0rem;
+}
+
+h3 {
+	color: #002f4a;
+	padding: 0;
+	margin-top: 0rem;
+	margin-left: 0rem;
+}
+
+.iframe-container {
+    width: 100%;
+    text-align: center;
+}
+.iframe-container iframe {
+    margin: 0 auto;
+    display: block;
 }
 
 .week {
@@ -134,5 +152,3 @@ footer {
 	color: #666; 
 	text-align: center; 
 }
-
-
