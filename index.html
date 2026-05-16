@@ -21,6 +21,7 @@
 		<a href="#info"><b>Information</b></a>
 		<a href="#presentations"><b>Presentations</b></a>
 		<a href="#journal"><b>Journal</b></a>
+		<a href="#results"><b>Results</b></a>
 		<a href="#refs"><b>References</b></a>
 		<a href="#contact"><b>Contact</b></a>
 	</nav>
@@ -56,6 +57,19 @@
 				</h3>
 				<div class=iframe-container>
 				<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTNgIhbJfnq3E1OCHNGK2grOx4dQ0aFvUlh-yopOcIqqjb6CNIZ6a70DCn7yFQSh1Z4K2NHbdTojI6C/pubembed?start=false&loop=true&delayms=5000" 
+				frameborder="0" width="467" height="299" allowfullscreen="true" 
+				mozallowfullscreen="true" webkitallowfullscreen="true">
+				</iframe>
+				<br>
+				</div>
+				<h3>Thesis Plan and Methodology (downloads: 
+				<a href="Presentations/01 Úvod - Hybridná reprezentácia 
+				na neurálno parametrický 3D model zvieraťa.pdf" download>pdf</a>, 
+				<a href="Presentations/01 Úvod - Hybridná reprezentácia 
+				na neurálno parametrický 3D model zvieraťa.pptx" download>pptx</a>)
+				</h3>
+				<div class=iframe-container>
+				<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ-2aZR-7WXcN_I6ICzqWipphGOLs5X-WhuXOFfyqDlBZjKItYCfSVnPmB6GLV2nA/pubembed?start=false&loop=true&delayms=5000" 
 				frameborder="0" width="467" height="299" allowfullscreen="true" 
 				mozallowfullscreen="true" webkitallowfullscreen="true">
 				</iframe>
@@ -156,6 +170,10 @@
 			<ul>
 				<li>Started writing a rough draft of the methodology</li>
 				<li>Started creating material patches to train NeRF-Tex on</li>
+				<li>Successfully trained Nerfstudio's Splatfacto Model
+				    on synthetic data (300 images of a SMAL model with 
+					Blender-created fur rendered in Blender)</li>
+				<li>Succesfully exported the resulting gaussians in a PLY file</li>
 			</ul>
 			</div>
 
@@ -163,10 +181,109 @@
 				(13. 04. 2026 - 19. 04. 2026)</b> </button>
 			<div class="progress">
 			<ul>
-				<li> - </li>
+				<li>Successfully trained Nerfstudio's Splatfacto
+				    model on synthetic data with
+					transparent background (COLMAP stage skipped,
+					needed data was generated using Blender 
+					and Python scripts)</li>
+			</ul>
+			</div>
+			
+			<button type="button" class="week"><b>Week 9 
+				(20. 04. 2026 - 26. 04. 2026)</b> </button>
+			<div class="progress">
+			<ul>
+				<li>Created another two SMAL models with fur 
+				    (a fox and a horse in addition to the original dog)</li>
+				<li>Rendered training data of the two new models</li>
+				<li>Succesfully trained Nerfstudio's Splatfacto model
+				    on the new training data and exported the gaussians
+					in PLY files</li>
+				<li>Continued working on the rough draft of the thesis</li>
+			</ul>
+			</div>
+			
+			<button type="button" class="week"><b>Week 9 
+				(27. 04. 2026 - 03. 05. 2026)</b> </button>
+			<div class="progress">
+			<ul>
+				<li>Experimented with modifying the gaussians' 
+					positions, scales and rotations</li>
+				<li>Experimented with "binding" the
+				    gaussians to the corresponding SMAL Model
+					and adjusting them after changing the SMAL 
+					model's shape and pose</li>
+				<li>Continued working on the rough draft of the thesis</li>
+			</ul>
+			</div>
+			
+			<button type="button" class="week"><b>Week 9 
+				(04. 05. 2026 - 10. 05. 2026)</b> </button>
+			<div class="progress">
+			<ul>
+				<li>Refining scripts that bind and 
+					control the gaussians with the SMAL model</li>
+				<li>Attempting to code a semi-automatic
+					aligment of the gaussians and the SMAL model
+					(needs to be done before binding)</li>
+				<li>Continued writing the thesis</li>
+			</ul>
+			</div>
+			
+			<button type="button" class="week"><b>Week 9 
+				(11. 05. 2026 - 17. 05. 2026)</b> </button>
+			<div class="progress">
+			<ul>
+				<li>Continued writing the thesis</li>
 			</ul>
 			</div>
 		</section>
+		
+		<section id="results" class="card">
+			<h2>Results</h2>
+
+			<p>The following results were obtained using these steps:</p>
+
+			<ol>
+				<li>Imported a SMAL model into Blender</li>
+				<li>Added fur to the SMAL model using Blender’s built-in Curves Fur system</li>
+				<li>Set up camera keyframes to capture the model from multiple angles</li>
+				<li>Rendered the keyframed camera sequence</li>
+				<li>Used a Python script to extract camera positions from Blender</li>
+				<li>Created a fur-only mesh with a significantly reduced fur count, then generated a point cloud from it using a Python script</li>
+				<li>Trained Nerfstudio's Splatfacto model using rendered images of the model, camera positions, and the fur point cloud as input data</li>
+				<li>Exported the trained 3DGS scene as a PLY file</li>
+			</ol>
+
+			<h3>3DGS Training Results</h3>
+
+			<label for="modelSelect"></label>
+			<select id="modelSelect" onchange="switchModel(this.value)">
+				<option value="dog">Dog model</option>
+				<option value="fox">Fox model</option>
+			</select>
+
+			<br><br>
+
+			<iframe 
+				id="viewer"
+				width="800"
+				height="500"
+				allow="fullscreen; xr-spatial-tracking"
+				src="https://superspl.at/s?id=5b45de03">
+			</iframe>
+		</section>
+
+		<script>
+			const models = {
+				dog: "https://superspl.at/s?id=5b45de03",
+				fox: "https://superspl.at/s?id=818e51c4"
+			};
+
+			function switchModel(modelName) {
+				document.getElementById("viewer").src = models[modelName];
+			}
+		</script>
 		
 		<section id="refs" class="card">
 			<h2>References</h2>
@@ -174,6 +291,18 @@
 				<li>Zuffi et al. 2017, Modeling the 3D Shape and Pose of Animals, 
 					<a href="https://smal.is.tue.mpg.de/" target="_blank" rel="noopener">
 					https://smal.is.tue.mpg.de/</a>
+				</li>
+				<li>Mildenhall et al. 2020, NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis, 
+					<a href="https://www.matthewtancik.com/nerf" target="_blank" rel="noopener">
+					https://www.matthewtancik.com/nerf</a>
+				</li>
+				<li>Kerbl et al. 2023, 3D Gaussian Splatting for Real-Time Radiance Field Rendering, 
+					<a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/" target="_blank" rel="noopener">
+					https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/</a>
+				</li>
+				<li>Tancik et al. 2023, Nerfstudio: A Modular Framework for Neural Radiance Field Development, 
+					<a href="https://docs.nerf.studio/index.html#" target="_blank" rel="noopener">
+					https://docs.nerf.studio/index.html#</a>
 				</li>
 				<li>Waczyńska et al. 2024, GaMeS: Mesh-Based Adapting and Modification 
 					of Gaussian Splatting, 
