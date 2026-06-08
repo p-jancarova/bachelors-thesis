@@ -34,6 +34,7 @@ header h2 {
 	transition: opacity 160ms ease, max-height 200ms ease, margin 200ms ease;
 	padding: 0 0;
 	margin: 0 0;
+	line-height: 1.25;
 }
 
 header.compact {
@@ -56,11 +57,12 @@ nav {
 	top: 0;
 	z-index: 1000;
 	background-color: #ede3da;
-	padding: 0.5rem 0.5rem;
 	text-align: center;
+	padding: 0;
 }
 
 nav a { 
+	display: inline-block;
 	padding: 0.5rem 0.5rem;
 	color: #002f4a;
 	text-decoration: none;
@@ -91,6 +93,7 @@ h2 {
 	padding: 0;
 	margin-top: 0rem;
 	margin-left: 0rem;
+	line-height: 1;
 }
 
 h3 {
@@ -107,6 +110,18 @@ h3 {
 .iframe-container iframe {
     margin: 0 auto;
     display: block;
+}
+
+#viewer1 {
+	width: 100%;
+	aspect-ratio: 16 / 11;
+	border: none;
+}
+
+#viewer2 {
+	width: 100%;
+	aspect-ratio: 16 / 11;
+	border: none;
 }
 
 .week {
@@ -134,7 +149,7 @@ h3 {
 	content: '\1F781';
 }
 
-.progress {
+.collapsible {
   padding: 0 1rem;
   background-color: white;
   max-height: 0;
@@ -142,8 +157,12 @@ h3 {
   transition: max-height 0.2s ease-out;
 }
 
-.no-transition .progress {
+.no-transition .collapsible {
   transition: none !important;
+}
+
+.justified {
+    text-align: justify;
 }
 
 footer { 
@@ -151,4 +170,10 @@ footer {
 	font-size: 0.9em; 
 	color: #666; 
 	text-align: center; 
+}
+
+img {
+	width: 100%;
+	height: auto;
+	object-fit: contain;
 }

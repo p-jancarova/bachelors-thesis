@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
+	/*
 	if (coll.length > 0) {
 		var last = coll[coll.length - 1];
 		var lastContent = last.nextElementSibling;
@@ -29,4 +30,5 @@ document.addEventListener("DOMContentLoaded", () => {
 			lastContent.style.maxHeight = lastContent.scrollHeight + "px";
 		}
 	}
+	*/
 });

@@ -19,10 +19,12 @@
 	
 	<nav>
 		<a href="#info"><b>Information</b></a>
-		<a href="#presentations"><b>Presentations</b></a>
-		<a href="#journal"><b>Journal</b></a>
+		<a href="#abstract"><b>Abstract</b></a>
+		<!-- <a href="#journal"><b>Journal</b></a> -->
 		<a href="#results"><b>Results</b></a>
-		<a href="#refs"><b>References</b></a>
+		<a href="#presentations"><b>Presentation</b></a>
+		<a href="#thesis"><b>Full Thesis</b></a>
+		<a href="#refs"><b>Bibliography</b></a>
 		<a href="#contact"><b>Contact</b></a>
 	</nav>
 	
@@ -32,48 +34,60 @@
 			<ul>
 				<li><b>Title:</b> Hybrid Representation for 
 					Neural and Parametric 3D Animal Model</li>
-				<li><b>Student:</b> Paulína Jančárová</li>
+				<li><b>Author:</b> Paulína Jančárová</li>
 				<li><b>Supervisor:</b> Mgr. Martin Halaj</li>
 				<li><b>Consultant:</b> doc. RNDr. Martin Madaras, PhD.</li>
-				<li><b>Description:</b> This thesis investigates  
-					hybrid approaches to the representation and rendering of 3D models 
-					by combining traditional parametric polygonal meshes with 
-					neural representations such as Neural Radiance Fields (NeRFs) 
-					or 3D Gaussian Splatting (3DGS). The goal is to design a 
-					hybrid representation of a 3D animal model, where the body 
-					is modeled using a parametric mesh and the fur is represented 
-					using one of the aforementioned neural representations. 
-				</li>
+				<li><b>University:</b> Comenius University in Bratislava</li>
+				<li><b>Faculty:</b> Faculty of Mathematics, Physics and Informatics</li>
+				<li><b>Study Programme:</b> Computer Science (Bachelor's Programme)</li>
+				<li><b>Field of Study:</b> Computer Science</li>
+				<li><b>Department:</b> Department of Applied Informatics</li>
+				<li><b>Year:</b> 2026</li>
 			</ul>
 		</section>
 		
-		<section id="presentations" class="card">
-			<h2>Presentations</h2>
-				<h3>Introductory Presentation (downloads: 
-				<a href="Presentations/01 Úvod - Hybridná reprezentácia 
-				na neurálno parametrický 3D model zvieraťa.pdf" download>pdf</a>, 
-				<a href="Presentations/01 Úvod - Hybridná reprezentácia 
-				na neurálno parametrický 3D model zvieraťa.pptx" download>pptx</a>)
-				</h3>
-				<div class=iframe-container>
-				<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTNgIhbJfnq3E1OCHNGK2grOx4dQ0aFvUlh-yopOcIqqjb6CNIZ6a70DCn7yFQSh1Z4K2NHbdTojI6C/pubembed?start=false&loop=true&delayms=5000" 
-				frameborder="0" width="467" height="299" allowfullscreen="true" 
-				mozallowfullscreen="true" webkitallowfullscreen="true">
-				</iframe>
-				<br>
-				</div>
-				<h3>Thesis Plan and Methodology (downloads: 
-				<a href="Presentations/02 Plán a postup práce - Hybridná reprezentácia na neurálno parametrický 3D model zvieraťa.pptx.pdf" download>pdf</a>, 
-				<a href="Presentations/02 Plán a postup práce - Hybridná reprezentácia na neurálno parametrický 3D model zvieraťa.pptx" download>pptx</a>)
-				</h3>
-				<div class=iframe-container>
-				<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ-2aZR-7WXcN_I6ICzqWipphGOLs5X-WhuXOFfyqDlBZjKItYCfSVnPmB6GLV2nA/pubembed?start=false&loop=true&delayms=5000" 
-				frameborder="0" width="467" height="299" allowfullscreen="true" 
-				mozallowfullscreen="true" webkitallowfullscreen="true">
-				</iframe>
-				</div>
+		<section id="abstract" class="card">
+			<h2>Abstract</h2>
+			<p class="justified">
+			In recent years, neural scene representations have emerged 
+			as powerful tools for reconstructing complex 3D scenes. 
+			Methods such as Neural Radiance Fields and 3D
+			Gaussian Splatting have proven effective at capturing fine details 
+			that are difficult to
+			model manually, such as those present in foliage, fabric, hair, and fur. 
+			Despite their
+			visual quality, neural representations generally lack 
+			an underlying structure that would
+			allow for easy manipulation and animation. In contrast, 
+			parametric 3D models provide
+			a controllable, editable representation through 
+			a predefined topology and parameter
+			space, but they struggle to represent fine details. 
+			This bachelor’s thesis explores the
+			combination of these two approaches through 
+			the creation of a hybrid neural-parametric
+			animal model. A parametric animal mesh is augmented 
+			with fur represented using 3D
+			Gaussian Splatting trained on synthetically created fur data. 
+			Experiments with a simple binding method 
+			that associates the learned 3D Gaussian representation with the
+			parametric animal mesh show that the fur is able to follow 
+			transformations of the
+			parametric model, including changes in position, 
+			orientation, scale, pose, and shape.
+			Rendering performance of the neurally created fur 
+			is compared with the original fur
+			model used to generate the training data, 
+			demonstrating the potential of the proposed
+			representation for real-time rendering applications.
+			<br>
+			<br>
+			<b>Keywords:</b> parametric 3D models, SMAL, 3D Gaussian Splatting, 
+			hybrid representations, hybrid neural-parametric 3D models, fur modeling
+			</p>
 		</section>
-	
+
+<!--
 		<section id="journal" class="card">
 			<h2>Progress Journal</h2>
 			
@@ -236,56 +250,242 @@
 			</ul>
 			</div>
 		</section>
+-->
 		
 		<section id="results" class="card">
 			<h2>Results</h2>
 
-			<p>The following results were obtained using these steps:</p>
-
+			<button type="button" class="week"><b>
+			The 3DGS fur representations were obtained using these steps:
+			</b></button>
+			
+			<div class="collapsible">
 			<ol>
-				<li>Imported a SMAL model into Blender</li>
-				<li>Added fur to the SMAL model using Blender’s built-in Curves Fur system</li>
-				<li>Set up camera keyframes to capture the model from multiple angles</li>
-				<li>Rendered the keyframed camera sequence</li>
-				<li>Used a Python script to extract camera positions from Blender</li>
-				<li>Created a fur-only mesh with a significantly reduced fur count, then generated a point cloud from it using a Python script</li>
-				<li>Trained Nerfstudio's Splatfacto model using rendered images of the model, camera positions, and the fur point cloud as input data</li>
-				<li>Exported the trained 3DGS scene as a PLY file</li>
+				<li>Imported a SMAL model into Blender.</li>
+				<li>Added fur to the SMAL model using Blender’s built-in 
+					Curves Fur system.</li>
+				<li>Set up camera keyframes to capture the model 
+					from multiple angles.</li>
+				<li>Rendered the keyframed camera sequence.</li>
+				<li>Used a Python script to extract camera positions from Blender.</li>
+				<li>Created a fur-only mesh with a significantly 
+					reduced fur count, then generated a point cloud from it 
+					using a Python script.</li>
+				<li>Trained Nerfstudio's Splatfacto model using 
+					rendered images of the model, camera positions, 
+					and the fur point cloud as input data.</li>
+				<li>Exported the trained 3DGS scene as a PLY file.</li>
 			</ol>
+			
+			<img src="training.png" alt="Training">
+			
+			</div>
+			
+			<br>
+			
+			<button type="button" class="week"><b>
+			The original 3DGS fur representations were adapted to different 
+			SMAL model shapes and poses using these steps:
+			</b></button>
+			
+			<div class="collapsible">
+			<ol>
+				<li>Aligned the 3DGS fur representation 
+					with the corresponding SMAL model mesh.</li>
+				<li>Bound the 3DGS fur representation 
+					to the SMAL model mesh:</li>
+				<ol>
+					<li>For each Gaussian primitive, the closest point
+						on the mesh was calculated.</li>
+					<li>The position of each Gaussian primitive 
+						relative to the closest mesh face was saved in an NPZ file. 
+						This included the face ID, barycentric coordinates of 
+						the closest point, offset of the Gaussian center along 
+						the face normal, and rotation relative to the face.</li>
+				</ol>
+				<li>The stored binding information was used to 
+					transfer the fur representation to a different SMAL model:</li>
+				<ol>
+					<li>The corresponding faces on the modified mesh were 
+						identified using the saved face ID.</li>
+					<li>The Gaussian centers were reconstructed using 
+						the stored barycentric coordinates and offsets from 
+						the mesh surface.</li>
+					<li>The Gaussian rotations were updated according to 
+						the local coordinate systems of the modified mesh faces.</li>
+					<li>The Gaussian scales were adjusted based on the local 
+						changes in triangle areas between 
+						the source and target meshes.</li>
+					<li>The Gaussian primitives with 
+						updated positions, rotations, and scales 
+						were saved in a new 3DGS PLY file.</li>
+				</ol>
+			</ol>
+			
+			</div>
+			
+			<br>
 
-			<h3>3DGS Training Results</h3>
-
-			<label for="modelSelect"></label>
-			<select id="modelSelect" onchange="switchModel(this.value)">
-				<option value="dog">Dog model</option>
-				<option value="fox">Fox model</option>
+			<label for="modelSelect1"></label>
+			<select id="modelSelect1" onchange="switchModel1(this.value)">
+				<option value="dog">3DGS Dog Fur</option>
+				<option value="fox">3DGS Fox Fur</option>
+				<option value="horse">3DGS Horse Fur</option>
 			</select>
 
 			<br><br>
+			The pose and shape transfer experiments will be uploaded soon.
+			<br><br>
 
 			<iframe 
-				id="viewer"
-				width="800"
-				height="500"
+				id="viewer1"
 				allow="fullscreen; xr-spatial-tracking"
 				src="https://superspl.at/s?id=5b45de03">
 			</iframe>
+			
 		</section>
 
 		<script>
 			const models = {
 				dog: "https://superspl.at/s?id=5b45de03",
-				fox: "https://superspl.at/s?id=818e51c4"
+				fox: "https://superspl.at/s?id=818e51c4",
+				horse: "https://superspl.at/s?id=7f7d9a79"
 			};
 
-			function switchModel(modelName) {
-				document.getElementById("viewer").src = models[modelName];
+			function switchModel1(modelName) {
+				document.getElementById("viewer1").src = models[modelName];
 			}
 		</script>
 		
+		<section id="presentations" class="card">
+			<h2>Thesis Defense Presentation</h2>
+				Coming soon.
+		</section>
+		
+		<section id="thesis" class="card">
+			<h2>Full Thesis</h2>
+			<iframe
+				src="thesis.pdf"
+				width="100%"
+				height="800px">
+			</iframe>
+		</section>
+		
 		<section id="refs" class="card">
-			<h2>References</h2>
+			<h2>Bibliography</h2>
 			<ul>
+				<li>Blender Foundation. 
+						<a href="https://www.blender.org/" 
+					target="_blank" rel="noopener">
+					Blender</a>,
+					2025.
+				</li>
+				<li>Xiangjun Gao, Xiaoyu Li, Yiyu Zhuang, Qi Zhang, 
+				    Wenbo Hu, Chaopeng Zhang,
+					Yao Yao, Ying Shan, and Long Quan.
+					<a href="https://gaoxiangjun.github.io/mani_gs/" 
+					target="_blank" rel="noopener">
+					Mani-gs: Gaussian splatting manipulation
+					with triangular mesh</a>. 
+					<i>arXiv preprint arXiv:2405.17811</i>, 2024.
+				</li>
+				<li>Bernhard Kerbl, Georgios Kopanas, Thomas Leimkühler, 
+					and George Drettakis.
+					<a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/" 
+					target="_blank" rel="noopener">
+					3d gaussian splatting for real-time radiance field rendering</a>. 
+					<i>ACM Transactions on
+					Graphics</i>, 42(4), July 2023.
+				</li>
+				<li>KIRI Innovations. 3dgs render for blender.
+					<a href="https://www.kiriengine.app/3d-tools/3dgs-render" 
+					target="_blank" rel="noopener">				
+					https://www.kiriengine.app/3d-tools/3dgs-render</a>, 
+					2025. Accessed: 2026-05-31.
+				</li>
+				<li>Matthew Loper, Naureen Mahmood, Javier Romero, Gerard Pons-Moll, 
+					and
+					Michael J. Black. 
+					<a href="https://smpl.is.tue.mpg.de/" 
+					target="_blank" rel="noopener">	
+					SMPL: A skinned multi-person linear model</a>.					
+					<i>ACM Trans.
+					Graphics (Proc. SIGGRAPH Asia)</i>, 34(6):248:1–248:16, 
+					October 2015.
+				</li>
+				<li>Ben Mildenhall, Pratul P. Srinivasan, Matthew Tancik, 
+					Jonathan T. Barron, Ravi
+					Ramamoorthi, and Ren Ng. 
+					<a href="https://www.matthewtancik.com/nerf" 
+					target="_blank" rel="noopener">	
+					Nerf: Representing scenes 
+					as neural radiance fields
+					for view synthesis</a>. 
+					In <i>ECCV</i>, 2020.
+				</li>
+				<li>Zhijing Shao, Zhaolong Wang, Zhuang Li, Duotun Wang, 
+					Xiangru Lin, Yu Zhang,
+					Mingming Fan, and Zeyu Wang. 
+					<a href="https://initialneil.github.io/SplattingAvatar" 
+					target="_blank" rel="noopener">	
+					SplattingAvatar: 
+					Realistic Real-Time Human Avatars with Mesh-Embedded 
+					Gaussian Splatting</a>. 
+					In <i>Proceedings of the
+					IEEE/CVF Conference on Computer Vision and 
+					Pattern Recognition (CVPR)</i>,
+					2024.
+				</li>
+				<li>Matthew Tancik, Ethan Weber, Evonne Ng, Ruilong Li, 
+					Brent Yi, Justin Kerr,
+					Terrance Wang, Alexander Kristoffersen, Jake Austin, 
+					Kamyar Salahi, Abhik
+					Ahuja, David McAllister, and Angjoo Kanazawa. 
+					<a href="https://docs.nerf.studio/index.html" 
+					target="_blank" rel="noopener">	
+					Nerfstudio: A modular framework for neural radiance 
+					field development</a>. 
+					In <i>ACM SIGGRAPH 2023 Conference
+					Proceedings</i>, SIGGRAPH ’23, 2023.
+				</li>
+				<li>Joanna Waczyńska, Piotr Borycki, Sławomir Tadeja, Jacek Tabor, 
+					and Przemysław Spurek. 
+					<a href="https://waczjoan.github.io/gaussian-mesh-splatting/" 
+					target="_blank" rel="noopener">	
+					Games: Mesh-based adapting and 
+					modification of gaussian splatting</a>. 
+					2024.
+				</li>
+				<li>Guanjun Wu, Taoran Yi, Jiemin Fang, Lingxi Xie, Xiaopeng Zhang, 
+					Wei Wei,
+					Wenyu Liu, Qi Tian, and Xinggang Wang. 
+					<a href="https://guanjunwu.github.io/4dgs/" 
+					target="_blank" rel="noopener">	
+					4d gaussian splatting 
+					for real-time dynamic scene rendering</a>. 
+					In 
+					<i>Proceedings of the IEEE/CVF Conference on Computer
+					Vision and Pattern Recognition (CVPR)</i>, pages 20310–20320, 
+					June 2024.
+				</li>
+				<li>Tianhan Xu, Yasuhiro Fujita, and Eiichi Matsumoto.
+					<a href="https://pfnet-research.github.io/surface-aligned-nerf/" 
+					target="_blank" rel="noopener">					
+					Surface-aligned neural radiance fields for controllable 
+					3d human synthesis</a>, 
+					2022.
+				</li>
+				<li>Silvia Zuffi, Angjoo Kanazawa, David Jacobs, and 
+					Michael J. Black. 
+					<a href="https://smal.is.tue.mpg.de/" 
+					target="_blank" rel="noopener">	
+					3D menagerie:
+					Modeling the 3D shape and pose of animals</a>. 
+					In <i>IEEE Conf. on Computer Vision
+					and Pattern Recognition (CVPR)</i>, July 2017.
+				</li>
+				
+				<!--
 				<li>Zuffi et al. 2017, Modeling the 3D Shape and Pose of Animals, 
 					<a href="https://smal.is.tue.mpg.de/" target="_blank" rel="noopener">
 					https://smal.is.tue.mpg.de/</a>
@@ -325,19 +525,21 @@
 					<a href="https://yihua7.github.io/NeRF-Texture-web/" target="_blank" 
 					rel="noopener">https://yihua7.github.io/NeRF-Texture-web/</a>
 				</li>
+				-->
 			</ul>
 		</section>
 	
 		<section id="contact" class="card">
 			<h2>Contact</h2>
 			<ul>
-				<li><b>Email:</b> jancarova9@uniba.sk</li>
+				<li><b>Personal Email:</b> paulinajancarova@gmail.com</li>
+				<li><b>University Email:</b> jancarova9@uniba.sk</li>
 			</ul>
 		</section>
 	</main>
 	
 	<footer>
-		<p>© 2026 Paulína Jančárová, Univerzita Komenského v Bratislave</p>
+		<p>© 2026 Paulína Jančárová, Comenius University in Bratislava</p>
 	</footer>
 	
 	<script src="script.js"></script> 
